@@ -4,7 +4,7 @@
   "description": "react-blank",
   "main": "index.js",
   "scripts": {
-    "start": ""
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,13 +18,15 @@
   "homepage": "https://github.com/bodyno/react-blank#readme",
   "devDependencies": {
     "babel-core": "^6.9.1",
-    "babel-eslint": "^4.1.3",
     "babel-loader": "^6.0.1",
     "babel-plugin-transform-runtime": "^6.9.0",
     "babel-preset-es2015": "^6.0.15",
     "babel-preset-react": "^6.0.15",
     "babel-preset-stage-0": "^6.0.15",
-    "webpack": "^1.13.1"
+    "html-webpack-plugin": "^2.21.0",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "react": "^15.0.0",
