@@ -1,17 +1,14 @@
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var config = require('./config')
 
-module.exports = {
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/dev-server',
-    './src/main'
-  ],
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js'
-  },
+var __DEV__ = config.__DEV__
+var __PROD__ = config.__PROD__
+
+var APP_ENTRY_PATH = './src/main'
+
+webpackConfig = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
@@ -30,3 +27,24 @@ module.exports = {
     }]
   }
 };
+
+webpackConfig.entry = __DEV__ ?
+  [
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/dev-server',
+    APP_ENTRY_PATH
+  ]:
+  [
+    APP_ENTRY_PATH
+  ];
+
+webpackConfig.output = __DEV__ ?
+{
+  path: path.join(__dirname, 'dist'),
+  filename: `main.js`
+}:{
+  path: path.join(__dirname, 'dist'),
+  filename: `[hash].js`
+}
+
+module.exports=webpackConfig;

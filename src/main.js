@@ -11,6 +11,3 @@ let render = () => {
 }
 
 render()
-fetch('/zen', function (data){
-  console.log(data);
-})
