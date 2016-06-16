@@ -10,4 +10,6 @@ let render = () => {
   ReactDOM.render(App, MOUNT_ELEMENT)
 }
 
+module.hot.accept()
+
 render()
