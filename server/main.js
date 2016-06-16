@@ -17,12 +17,10 @@ app.use(convert(historyApiFallback({
 
 if(__DEV__){
   app.use(devMiddleware(compiler), {
-    contentBase: '/src',
+    contentBase: src,
     hot: true,
     stats: {
-      chunks : false,
-      chunkModules : false,
-      colors : true
+      colors : false
     }
   })
   app.use(hotMiddleware(compiler))
