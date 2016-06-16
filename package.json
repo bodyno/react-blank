@@ -6,11 +6,18 @@
   "scripts": {
     "start": "nodemon --exec babel-node bin/server",
     "build": "better-npm-run build",
+    "run": "better-npm-run run",
     "clean": "rimraf dist"
   },
   "betterScripts": {
     "build": {
       "command": "npm run clean && babel-node bin/compile",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "run": {
+      "command": "npm run build && nodemon --exec babel-node bin/server",
       "env": {
         "NODE_ENV": "production"
       }
