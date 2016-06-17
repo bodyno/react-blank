@@ -1,20 +1,28 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import classes from './styles/test.scss'
+import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import './styles/core.scss'
+import App from './routes/App'
+import Repos from './routes/Repos'
+import About from './routes/About'
+import Repo from './routes/Repo'
 
 const MOUNT_ELEMENT = document.getElementById('root')
 
 let render = () => {
-  const App=(
-    <div>
-      <h1 className={classes.title}>Hello World</h1>
-    </div>
+  const Ele=(
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <Route path="/repos" component={Repos}>
+          <Route path="/repos/:userName/:repoName" component={Repo}/>
+        </Route>
+        <Route path="/about" component={About}/>
+      </Route>
+    </Router>
   )
-  ReactDOM.render(App, MOUNT_ELEMENT)
+  ReactDOM.render(Ele, MOUNT_ELEMENT)
 }
 
-console.log(__DEV__);
 if (module.hot) {
   module.hot.accept()
 }
