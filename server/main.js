@@ -24,6 +24,7 @@ if(__DEV__){
     }
   })
   app.use(hotMiddleware(compiler))
+  app.use(convert(serve(src)))
 }else{
   app.use(convert(serve(dist)))
 }

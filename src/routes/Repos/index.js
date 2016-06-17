@@ -1,3 +1,14 @@
-import Repos from './Repos'
+import Repo from '../Repo'
 
-export default Repos
+export default () => ({
+  path: 'repos',
+  childRoutes: [
+    Repo()
+  ],
+  getComponent (nextState, cb){
+    require.ensure([], (require)=>{
+      const Repos = require('./Repos').default
+      cb(null, Repos)
+    })
+  }
+})

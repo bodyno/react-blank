@@ -6,7 +6,6 @@ import config from './index'
 var APP_ENTRY_PATH = './src/main'
 const {__DEV__, src, dist} = config
 const webpackConfig = {
-  devtool: 'source-map',
   module: {
     loaders: [{
       test: /\.js$/,
@@ -24,11 +23,16 @@ const webpackConfig = {
   }
 }
 
+if(__DEV__) {
+  webpackConfig.devtool = 'source-map';
+}
+
 webpackConfig.plugins = [
   new webpack.DefinePlugin({__DEV__}),
   new HtmlWebpackPlugin({
     template: 'src/index.html',
     favicon: 'src/static/favicon.ico',
+    inject: 'body',
     minify: {
       collapseWhitespace: true
     }
@@ -143,11 +147,13 @@ webpackConfig.entry = __DEV__ ?
 
 webpackConfig.output = __DEV__ ?
 {
+  filename: `main.js`,
   path: dist,
-  filename: `main.js`
+  publicPath: '/'
 }:{
+  filename: `[hash].js`,
   path: dist,
-  filename: `[hash].js`
+  publicPath: '/'
 }
 
 export default webpackConfig
