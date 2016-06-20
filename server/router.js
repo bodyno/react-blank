@@ -1,4 +1,4 @@
-import { match, Router } from 'react-router'
+import { match, RouterContext } from 'react-router'
 import routes from '../src/routes'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
@@ -17,7 +17,7 @@ export default function renderAppRouter () {
         return next()
       } else if (renderProps) {
         const html = renderToString(
-          <Router {...renderProps} />
+          <RouterContext {...renderProps} />
         )
         ctx.body = renderFullPage(html)
         resolve()
