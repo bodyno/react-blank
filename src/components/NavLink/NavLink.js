@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router'
-import classes from './NavLink.scss'
 
 export default React.createClass({
   render() {
     return (
-      <Link {...this.props} activeClassName={classes.active} />
+      <Link {...this.props} />
     )
   }
 })

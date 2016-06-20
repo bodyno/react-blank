@@ -1,8 +1,10 @@
+import { Route, IndexRoute } from 'react-router'
 import React from 'react'
 import App from './App'
 import Repos from './Repos'
 import About from './About'
 import Home from './Home'
+import Repo from './Repo'
 
 export const createRoutes = [
   {
@@ -18,19 +20,11 @@ export const createRoutes = [
 
 export default createRoutes
 
-/*
-export default React.createClass({
-  render() {
-    return (
-      <Router history={browserHistory}>
-        <Route path="/" component={App}>
-          <Route path="/repos" component={Repos}>
-            <Route path="/repos/:userName/:repoName" component={Repo}/>
-          </Route>
-          <Route path="/about" component={About}/>
-        </Route>
-      </Router>
-    )
-  }
-})
-*/
+/*export default (
+  <Route path="/" component={Home}>
+    <Route path="/repos" component={Repos}>
+      <Route path="/repos/:userName/:repoName" component={Repo}/>
+    </Route>
+    <Route path="/about" component={About}/>
+  </Route>
+)*/

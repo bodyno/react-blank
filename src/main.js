@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import { Router, browserHistory } from 'react-router'
 import './styles/core.scss'
 import routes from './routes'
 
