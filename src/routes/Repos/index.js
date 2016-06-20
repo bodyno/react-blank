@@ -1,14 +1,8 @@
-import Repo from '../Repo'
+if (typeof require.ensure !== 'function') require.ensure = (d, c) => c(require)
+
+import Repos from './Repos'
 
 export default () => ({
   path: 'repos',
-  childRoutes: [
-    Repo()
-  ],
-  getComponent (nextState, cb){
-    require.ensure([], (require)=>{
-      const Repos = require('./Repos').default
-      cb(null, Repos)
-    })
-  }
+  component: Repos
 })

@@ -10,8 +10,8 @@ export default [
     component: App,
     indexRoute: Home,
     childRoutes: [
-      Repos(),
-      About()
+      About(),
+      Repos()
     ]
   }
 ]

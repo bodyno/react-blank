@@ -1,6 +1,5 @@
 import React from 'react'
 import NavLink from '../../components/NavLink'
-import { browserHistory } from 'react-router'
 
 export default React.createClass({
   contextTypes: {
@@ -30,7 +29,6 @@ export default React.createClass({
             </form>
           </li>
         </ul>
-        {this.props.children}
       </div>
     )
   }

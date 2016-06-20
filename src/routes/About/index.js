@@ -1,4 +1,4 @@
-/*
+if (typeof require.ensure !== 'function') require.ensure = (d, c) => c(require)
 export default () => ({
   path: 'about',
   getComponent (nextState, cb){
@@ -7,12 +7,5 @@ export default () => ({
       cb(null, About)
     })
   }
-})
-*/
-
-import About from './About'
-export default () => ({
-  path: 'about',
-  component: About
 })
 
