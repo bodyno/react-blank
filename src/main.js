@@ -13,7 +13,7 @@ let render = () => {
   ReactDOM.render(App, MOUNT_ELEMENT)
 }
 
-if (module.hot) {
+if (module.hot && __DEV__) {
   module.hot.accept()
 }
 
