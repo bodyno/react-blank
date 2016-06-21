@@ -5,7 +5,7 @@ import Home from '../Home'
 export default React.createClass({
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>React Router Tutorial</h1>
         <ul role='nav'>
           <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>

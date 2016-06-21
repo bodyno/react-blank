@@ -16,13 +16,13 @@ const compiler = webpack(webpackConfig)
 const {__DEV__, src, dist} = config
 
 app.use(koaCompress())
-/*app.use(convert(historyApiFallback({
+app.use(convert(historyApiFallback({
   verbose: false
-})))*/
+})))
 
-const router = new Router()
+/*const router = new Router()
 router.get('/(.*)', renderAppRouter())
-app.use(router.routes())
+app.use(router.routes())*/
 
 if(__DEV__){
   app.use(devMiddleware(compiler), {

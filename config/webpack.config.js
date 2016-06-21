@@ -152,6 +152,7 @@ webpackConfig.output = __DEV__ ?
   publicPath: '/'
 }:{
   filename: `[hash].js`,
+  chunkFilename: '[hash].js',
   path: dist,
   publicPath: '/'
 }
