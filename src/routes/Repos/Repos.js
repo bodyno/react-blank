@@ -29,6 +29,7 @@ export default React.createClass({
             </form>
           </li>
         </ul>
+        {this.props.children}
       </div>
     )
   }
